@@ -12,10 +12,12 @@ export function Header() {
   return (
     <View style={styles.container}>
       <LogoSVG />
-      <UserPhoto imageUri="https://github.com/joaodias-rms.png"/>
-      <TouchableOpacity>
-        <Text style={styles.logoutText}>Sair</Text>
-      </TouchableOpacity>
+      <View style={styles.logoutButton}>
+        <TouchableOpacity>
+          <Text style={styles.logoutText}>Sair</Text>
+        </TouchableOpacity>
+        <UserPhoto imageUri="https://github.com/joaodias-rms.png" />
+      </View>
     </View>
   );
 }
