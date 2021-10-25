@@ -56,7 +56,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       })) as AuthorizationResponse;
 
       if (
-        authSessionResponse.type === "sucess" &&
+        authSessionResponse.type === "success" &&
         authSessionResponse.params.error !== "access_denied"
       ) {
         const authResponse = await api.post("/authenticate", {
@@ -77,7 +77,11 @@ function AuthProvider({ children }: AuthProviderProps) {
       setIsSigningIn(false);
     }
   }
-  async function signOut() {}
+  async function signOut() {
+      setUser(null)
+      await AsyncStorage.removeItem(USER_STORAGE)
+      await AsyncStorage.removeItem(TOKEN_STORAGE)
+  }
 
   useEffect(() => {
     async function loadUserStorageData() {
