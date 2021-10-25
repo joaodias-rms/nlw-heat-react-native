@@ -3,6 +3,7 @@
     "name": "app",
     "slug": "app",
     "version": "1.0.0",
+    "scheme": "app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
